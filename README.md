@@ -27,11 +27,9 @@ Para alterar o swagger.yalm use o [swagger-editor](https://editor.swagger.io/)
 Para visualizar [swagger](src/main/resources/swagger.yaml)
 
 Links de Referências:
-[https://www.baeldung.com/mapstruct](https://www.baeldung.com/mapstruct)
-[https://mapstruct.org/documentation/installation/](https://mapstruct.org/documentation/installation/)
-[https://swagger.io/docs/open-source-tools/swagger-codegen/](https://swagger.io/docs/open-source-tools/swagger-codegen/)
-[https://github.com/swagger-api/swagger-codegen](https://github.com/swagger-api/swagger-codegen)
-[https://editor.swagger.io/](https://editor.swagger.io/)
-[https://github.com/swagger-api/swagger-codegen/blob/master/modules/swagger-codegen-maven-plugin/README.md
-](https://github.com/swagger-api/swagger-codegen/blob/master/modules/swagger-codegen-maven-plugin/README.md
-)
+(https://www.baeldung.com/mapstruct  
+https://mapstruct.org/documentation/installation/
+https://swagger.io/docs/open-source-tools/swagger-codegen/
+https://github.com/swagger-api/swagger-codegen
+https://editor.swagger.io/
+https://github.com/swagger-api/swagger-codegen/blob/master/modules/swagger-codegen-maven-plugin/README.md
