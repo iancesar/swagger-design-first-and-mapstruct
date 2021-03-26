@@ -1,0 +1,125 @@
+openapi: 3.0.1
+info:
+  title: Swagger Design First
+  description: 'Exemplo de como usar o Swagger Design First'
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: iancesarvidinharego@gmail.com
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://petstore.swagger.io/v2
+tags:
+  - name: Aluno
+    description: Ações sobre aluno
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+paths:
+  /aluno/{id}:
+    put:
+      tags:
+        - Aluno
+      summary: Atualiza um aluno existente
+      operationId: updateAluno
+      parameters:
+        - name: id
+          in: path
+          description: ID do aluno
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Payload de atualização de aluno
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlunoRequest'
+        required: true
+      responses:
+        200:
+          description: Atualização feita
+          content: {}
+        404:
+          description: Aluno não encontrado
+          content: {}
+      x-codegen-request-body-name: body
+  /aluno:
+    post:
+      tags:
+        - Aluno
+      summary: Adicionar um novo aluno
+      operationId: addAluno
+      requestBody:
+        description: Payload do aluno a ser adicionado
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlunoRequest'
+        required: true
+      responses:
+        201:
+          description: Aluno inserido
+          content: {}
+      x-codegen-request-body-name: body
+    get:
+      tags:
+        - Aluno
+      summary: Retorna todos alunos
+      operationId: findAll
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AlunoResponse'
+components:
+  schemas:
+    AlunoRequest:
+      type: object
+      required:
+        - nome
+        - email
+        - nascimento
+        - situacao
+      properties:
+        nome:
+          type: string
+        email:
+          type: string
+        nascimento:
+          type: string
+          format: date
+        situacao:
+          type: string
+          description: Situação do Aluno
+          enum:
+            - NOVO
+            - MATRICULADO
+            - MATRICULA_PENDENTE
+    AlunoResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        nome:
+          type: string
+        email:
+          type: string
+        nascimento:
+          type: string
+          format: date
+        situacao:
+          type: string
+          description: Situação do Aluno
+          enum:
+            - NOVO
+            - MATRICULADO
+            - MATRICULA_PENDENTE

@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "e9d27c57-5ec6-4faa-b774-3ddbe844e622",
+		"name": "Aluno",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar Aluno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"Ian\",\n  \"email\": \"iancesarvidinharego@gmail.com\",\n  \"nascimento\": \"1993-07-22\",\n  \"situacao\": \"NOVO\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/aluno-service/v1/aluno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"aluno-service",
+						"v1",
+						"aluno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Aluno",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"122a581e-3eb3-440a-bdd9-285b245f5527\",\n        \"nome\": \"Ian\",\n        \"email\": \"iancesarvidinharego@gmail.com\",\n        \"nascimento\": \"1993-07-22\",\n        \"situacao\": \"MATRICULADO\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/aluno-service/v1/aluno/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"aluno-service",
+						"v1",
+						"aluno",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "122a581e-3eb3-440a-bdd9-285b245f5527"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Aluno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/aluno-service/v1/aluno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"aluno-service",
+						"v1",
+						"aluno"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
